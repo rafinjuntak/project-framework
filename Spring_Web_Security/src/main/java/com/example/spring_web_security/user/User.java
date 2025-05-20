@@ -1,14 +1,16 @@
 package com.example.spring_web_security.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Data
+@Data @AllArgsConstructor @NoArgsConstructor
+//@Table(name = "user")
 public class User {
-
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @GeneratedValue
     private Long id;
@@ -17,4 +19,5 @@ public class User {
     private String email;
     private String password;
 
+    private String role = "USER";
 }
